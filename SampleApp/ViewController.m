@@ -64,15 +64,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    TestView* view = [[TestView alloc]init];
+    UIView* view = [[UIView alloc]init];
     view.backgroundColor = [UIColor redColor];
     view.frame = CGRectMake(100, 100, 100, 100);
+    [view setUserInteractionEnabled:YES];
+    
     [self.view addSubview:view];
-//
-//    UIView* view2 = [[UIView alloc]init];
-//    view2.backgroundColor = [UIColor blueColor];
-//    view2.frame = CGRectMake(150, 150, 100, 100);
-//    [self.view addSubview:view2];
+    //注意：是UITapGestureRecognizer，不是UIGestureRecognizer
+    UITapGestureRecognizer* gesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(pushController)];
+    [view addGestureRecognizer:gesture];
+    
+}
+-(void)pushController{
+    UIViewController* controller = [[UIViewController alloc]init];
+    controller.navigationItem.title = @"内容";
+    controller.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"右侧标题" style:UIBarButtonItemStylePlain target:self action:nil];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 

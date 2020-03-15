@@ -1,4 +1,5 @@
 #import "SceneDelegate.h"
+#import "ViewController.h"
 
 @interface SceneDelegate ()
 
@@ -11,7 +12,43 @@
     // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
     // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+    
+    self.window = [[UIWindow alloc] initWithWindowScene:(UIWindowScene*)scene];
+    UITabBarController* tabController = [[UITabBarController alloc]init];
+    
+    ViewController* viewController1 = [[ViewController alloc]init];
+    viewController1.tabBarItem.title = @"新闻";
+    viewController1.tabBarItem.image =[UIImage imageNamed:@"page"];
+    viewController1.tabBarItem.selectedImage =[UIImage imageNamed:@"page_selected"];
+
+    
+    UIViewController* viewController2 = [[UIViewController alloc]init];
+    viewController2.tabBarItem.title = @"视频";
+    viewController2.tabBarItem.image =[UIImage imageNamed:@"video"];
+    viewController2.tabBarItem.selectedImage =[UIImage imageNamed:@"video_selected"];
+
+    viewController2.view.backgroundColor = [UIColor yellowColor];
+    UIViewController* viewController3 = [[UIViewController alloc]init];
+    viewController3.view.backgroundColor = [UIColor blueColor];
+    viewController3.tabBarItem.title = @"推荐";
+    viewController3.tabBarItem.image =[UIImage imageNamed:@"like"];
+    viewController3.tabBarItem.selectedImage =[UIImage imageNamed:@"like_selected"];
+
+    UIViewController* viewController4 = [[UIViewController alloc]init];
+    viewController4.view.backgroundColor = [UIColor lightGrayColor];
+    viewController4.tabBarItem.title = @"我的";
+    viewController4.tabBarItem.image =[UIImage imageNamed:@"home"];
+    viewController4.tabBarItem.selectedImage =[UIImage imageNamed:@"home_selected"];
+    [tabController setViewControllers:@[viewController1,viewController2,viewController3,viewController4]];
+    
+//    以navigationcontroller作为rootcontroller，tabcontroller作为navigationcontroller的rootviewcontroller。
+    UINavigationController* navigationController = [[UINavigationController alloc]initWithRootViewController: tabController];
+    
+    self.window.rootViewController = navigationController;
+    [self.window makeKeyAndVisible];
+    
 }
+
 
 
 - (void)sceneDidDisconnect:(UIScene *)scene {
