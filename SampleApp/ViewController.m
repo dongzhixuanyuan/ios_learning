@@ -41,7 +41,7 @@
 
 
 
-@interface ViewController ()
+@interface ViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @end
 
@@ -64,21 +64,43 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    UIView* view = [[UIView alloc]init];
-    view.backgroundColor = [UIColor redColor];
-    view.frame = CGRectMake(100, 100, 100, 100);
-    [view setUserInteractionEnabled:YES];
-    
-    [self.view addSubview:view];
-    //注意：是UITapGestureRecognizer，不是UIGestureRecognizer
-    UITapGestureRecognizer* gesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(pushController)];
-    [view addGestureRecognizer:gesture];
+    UITableView* tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    tableView.dataSource = self;
+    tableView.delegate = self;
+    [self.view addSubview:tableView];
     
 }
 -(void)pushController{
     UIViewController* controller = [[UIViewController alloc]init];
     controller.navigationItem.title = @"内容";
     controller.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"右侧标题" style:UIBarButtonItemStylePlain target:self action:nil];
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 20;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"id"];
+    if (!cell) {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"id"];
+    }
+    cell.textLabel.text = [NSString stringWithFormat: @"主标题 - %@",@(indexPath.row)];
+    cell.detailTextLabel.text = @"副标题";
+    cell.imageView.image = [UIImage imageNamed:@"video"];
+    return cell;
+}
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 100;
+}
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    UIViewController* controller = [[UIViewController alloc]init];
+    controller.title = [NSString stringWithFormat:@"%@",@(indexPath.row)];
     [self.navigationController pushViewController:controller animated:YES];
 }
 

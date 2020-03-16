@@ -1,7 +1,7 @@
 #import "SceneDelegate.h"
 #import "ViewController.h"
 
-@interface SceneDelegate ()
+@interface SceneDelegate()<UITableViewDelegate>
 
 @end
 
@@ -15,7 +15,7 @@
     
     self.window = [[UIWindow alloc] initWithWindowScene:(UIWindowScene*)scene];
     UITabBarController* tabController = [[UITabBarController alloc]init];
-    
+    tabController.delegate = self;
     ViewController* viewController1 = [[ViewController alloc]init];
     viewController1.tabBarItem.title = @"新闻";
     viewController1.tabBarItem.image =[UIImage imageNamed:@"page"];
@@ -48,6 +48,15 @@
     [self.window makeKeyAndVisible];
     
 }
+
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
+    return YES;
+}
+- (void)tabBarController:(UITabBarController *)tabBarController 
+ didSelectViewController:(UIViewController *)viewController{
+    NSLog(@"didSelectViewController");
+}
+
 
 
 
