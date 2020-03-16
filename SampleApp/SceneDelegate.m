@@ -1,5 +1,6 @@
 #import "SceneDelegate.h"
 #import "ViewController.h"
+#import "GTVideoController.h"
 
 @interface SceneDelegate()<UITableViewDelegate>
 
@@ -20,14 +21,8 @@
     viewController1.tabBarItem.title = @"新闻";
     viewController1.tabBarItem.image =[UIImage imageNamed:@"page"];
     viewController1.tabBarItem.selectedImage =[UIImage imageNamed:@"page_selected"];
-
+    GTVideoController* videoController = [GTVideoController initWithParams:@"视频" unselectedImage:[UIImage imageNamed:@"video"] selectedImage: [UIImage imageNamed:@"video_selected"]];
     
-    UIViewController* viewController2 = [[UIViewController alloc]init];
-    viewController2.tabBarItem.title = @"视频";
-    viewController2.tabBarItem.image =[UIImage imageNamed:@"video"];
-    viewController2.tabBarItem.selectedImage =[UIImage imageNamed:@"video_selected"];
-
-    viewController2.view.backgroundColor = [UIColor yellowColor];
     UIViewController* viewController3 = [[UIViewController alloc]init];
     viewController3.view.backgroundColor = [UIColor blueColor];
     viewController3.tabBarItem.title = @"推荐";
@@ -39,7 +34,7 @@
     viewController4.tabBarItem.title = @"我的";
     viewController4.tabBarItem.image =[UIImage imageNamed:@"home"];
     viewController4.tabBarItem.selectedImage =[UIImage imageNamed:@"home_selected"];
-    [tabController setViewControllers:@[viewController1,viewController2,viewController3,viewController4]];
+    [tabController setViewControllers:@[viewController1,videoController,viewController3,viewController4]];
     
 //    以navigationcontroller作为rootcontroller，tabcontroller作为navigationcontroller的rootviewcontroller。
     UINavigationController* navigationController = [[UINavigationController alloc]initWithRootViewController: tabController];

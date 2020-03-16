@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A04EED25241F1DEE00FAF693 /* GTVideoController.m in Sources */ = {isa = PBXBuildFile; fileRef = A04EED24241F1DEE00FAF693 /* GTVideoController.m */; };
 		A070E91B241D15770080169A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A070E91A241D15770080169A /* AppDelegate.m */; };
 		A070E91E241D15770080169A /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A070E91D241D15770080169A /* SceneDelegate.m */; };
 		A070E921241D15770080169A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A070E920241D15770080169A /* ViewController.m */; };
@@ -38,6 +39,8 @@
 		A048FCA6241E2A720076F2E1 /* icon.bundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = icon.bundle.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		A048FCA8241E2A720076F2E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A04EED22241E316C00FAF693 /* icon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = icon.bundle; path = "../../geektime-ios-course/project/SampleApp/icon.bundle"; sourceTree = "<group>"; };
+		A04EED23241F1DEE00FAF693 /* GTVideoController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTVideoController.h; sourceTree = "<group>"; };
+		A04EED24241F1DEE00FAF693 /* GTVideoController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTVideoController.m; sourceTree = "<group>"; };
 		A070E916241D15770080169A /* SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A070E919241D15770080169A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A070E91A241D15770080169A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -133,6 +136,8 @@
 				A070E927241D15790080169A /* LaunchScreen.storyboard */,
 				A070E92A241D15790080169A /* Info.plist */,
 				A070E92B241D15790080169A /* main.m */,
+				A04EED23241F1DEE00FAF693 /* GTVideoController.h */,
+				A04EED24241F1DEE00FAF693 /* GTVideoController.m */,
 			);
 			path = SampleApp;
 			sourceTree = "<group>";
@@ -321,6 +326,7 @@
 			files = (
 				A070E921241D15770080169A /* ViewController.m in Sources */,
 				A070E91B241D15770080169A /* AppDelegate.m in Sources */,
+				A04EED25241F1DEE00FAF693 /* GTVideoController.m in Sources */,
 				A070E92C241D15790080169A /* main.m in Sources */,
 				A070E91E241D15770080169A /* SceneDelegate.m in Sources */,
 			);
