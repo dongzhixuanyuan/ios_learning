@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A04EED25241F1DEE00FAF693 /* GTVideoController.m in Sources */ = {isa = PBXBuildFile; fileRef = A04EED24241F1DEE00FAF693 /* GTVideoController.m */; };
+		A04EED28241FC75D00FAF693 /* RecommandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A04EED27241FC75D00FAF693 /* RecommandViewController.m */; };
+		A04EED2B2420AB0800FAF693 /* NewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A04EED2A2420AB0800FAF693 /* NewsTableViewCell.m */; };
 		A070E91B241D15770080169A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A070E91A241D15770080169A /* AppDelegate.m */; };
 		A070E91E241D15770080169A /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A070E91D241D15770080169A /* SceneDelegate.m */; };
 		A070E921241D15770080169A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A070E920241D15770080169A /* ViewController.m */; };
@@ -41,6 +43,10 @@
 		A04EED22241E316C00FAF693 /* icon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = icon.bundle; path = "../../geektime-ios-course/project/SampleApp/icon.bundle"; sourceTree = "<group>"; };
 		A04EED23241F1DEE00FAF693 /* GTVideoController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTVideoController.h; sourceTree = "<group>"; };
 		A04EED24241F1DEE00FAF693 /* GTVideoController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTVideoController.m; sourceTree = "<group>"; };
+		A04EED26241FC75D00FAF693 /* RecommandViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecommandViewController.h; sourceTree = "<group>"; };
+		A04EED27241FC75D00FAF693 /* RecommandViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecommandViewController.m; sourceTree = "<group>"; };
+		A04EED292420AB0800FAF693 /* NewsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsTableViewCell.h; sourceTree = "<group>"; };
+		A04EED2A2420AB0800FAF693 /* NewsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsTableViewCell.m; sourceTree = "<group>"; };
 		A070E916241D15770080169A /* SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A070E919241D15770080169A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A070E91A241D15770080169A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -138,6 +144,10 @@
 				A070E92B241D15790080169A /* main.m */,
 				A04EED23241F1DEE00FAF693 /* GTVideoController.h */,
 				A04EED24241F1DEE00FAF693 /* GTVideoController.m */,
+				A04EED26241FC75D00FAF693 /* RecommandViewController.h */,
+				A04EED27241FC75D00FAF693 /* RecommandViewController.m */,
+				A04EED292420AB0800FAF693 /* NewsTableViewCell.h */,
+				A04EED2A2420AB0800FAF693 /* NewsTableViewCell.m */,
 			);
 			path = SampleApp;
 			sourceTree = "<group>";
@@ -329,6 +339,8 @@
 				A04EED25241F1DEE00FAF693 /* GTVideoController.m in Sources */,
 				A070E92C241D15790080169A /* main.m in Sources */,
 				A070E91E241D15770080169A /* SceneDelegate.m in Sources */,
+				A04EED28241FC75D00FAF693 /* RecommandViewController.m in Sources */,
+				A04EED2B2420AB0800FAF693 /* NewsTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

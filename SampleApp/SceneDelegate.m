@@ -1,6 +1,7 @@
 #import "SceneDelegate.h"
 #import "ViewController.h"
 #import "GTVideoController.h"
+#import "RecommandViewController.h"
 
 @interface SceneDelegate()<UITableViewDelegate>
 
@@ -23,11 +24,8 @@
     viewController1.tabBarItem.selectedImage =[UIImage imageNamed:@"page_selected"];
     GTVideoController* videoController = [GTVideoController initWithParams:@"视频" unselectedImage:[UIImage imageNamed:@"video"] selectedImage: [UIImage imageNamed:@"video_selected"]];
     
-    UIViewController* viewController3 = [[UIViewController alloc]init];
-    viewController3.view.backgroundColor = [UIColor blueColor];
-    viewController3.tabBarItem.title = @"推荐";
-    viewController3.tabBarItem.image =[UIImage imageNamed:@"like"];
-    viewController3.tabBarItem.selectedImage =[UIImage imageNamed:@"like_selected"];
+    RecommandViewController* viewController3 = [[RecommandViewController alloc]init];
+    
 
     UIViewController* viewController4 = [[UIViewController alloc]init];
     viewController4.view.backgroundColor = [UIColor lightGrayColor];

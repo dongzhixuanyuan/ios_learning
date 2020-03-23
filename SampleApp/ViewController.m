@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "NewsTableViewCell.h"
 @interface TestView:UIView
 @end
 
@@ -82,13 +83,11 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"id"];
+    NewsTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"id"];
     if (!cell) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"id"];
+        cell = [[NewsTableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"id"];
     }
-    cell.textLabel.text = [NSString stringWithFormat: @"主标题 - %@",@(indexPath.row)];
-    cell.detailTextLabel.text = @"副标题";
-    cell.imageView.image = [UIImage imageNamed:@"video"];
+    [cell fillData];
     return cell;
 }
 
