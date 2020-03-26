@@ -76,7 +76,7 @@
 }
 
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer{
-    gestureRecognizer.bou
+    
     return YES;
 }
 

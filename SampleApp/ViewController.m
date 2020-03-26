@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "NewsTableViewCell.h"
+#import "GTDetailViewController.h"
 @interface TestView:UIView
 @end
 
@@ -98,8 +99,7 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    UIViewController* controller = [[UIViewController alloc]init];
-    controller.title = [NSString stringWithFormat:@"%@",@(indexPath.row)];
+    GTDetailViewController* controller = [[GTDetailViewController alloc]init];
     [self.navigationController pushViewController:controller animated:YES];
 }
 
