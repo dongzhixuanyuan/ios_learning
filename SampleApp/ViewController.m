@@ -9,42 +9,42 @@
 #import "ViewController.h"
 #import "NewsTableViewCell.h"
 #import "GTDetailViewController.h"
-@interface TestView:UIView
-@end
+#import "GTDeleteView.h"
+//@interface TestView:UIView
+//@end
+//
+//@implementation TestView
+//
+//- (instancetype)init
+//{
+//    self = [super init];
+//    if (self) {
+//
+//    }
+//    return self;
+//}
+//
+//
+//- (void)willMoveToSuperview:(nullable UIView *)newSuperview{
+//    [super willMoveToSuperview:newSuperview];
+//}
+//- (void)didMoveToSuperview{
+//    [super didMoveToSuperview];
+//
+//
+//}
+//- (void)willMoveToWindow:(nullable UIWindow *)newWindow{
+//    [super willMoveToWindow:newWindow];
+//}
+//- (void)didMoveToWindow{
+//    [super didMoveToWindow];
+//}
+//@end
 
-@implementation TestView
 
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        
-    }
-    return self;
-}
-
-
-- (void)willMoveToSuperview:(nullable UIView *)newSuperview{
-    [super willMoveToSuperview:newSuperview];
-}
-- (void)didMoveToSuperview{
-    [super didMoveToSuperview];
-
-
-}
-- (void)willMoveToWindow:(nullable UIWindow *)newWindow{
-    [super willMoveToWindow:newWindow];
-}
-- (void)didMoveToWindow{
-    [super didMoveToWindow];
-}
-@end
-
-
-
-
-@interface ViewController ()<UITableViewDataSource,UITableViewDelegate>
-
+@interface ViewController ()<UITableViewDataSource,UITableViewDelegate,NewsTableViewCellDelegate>
+@property (strong,nonatomic,readwrite)UITableView* tableView;
+@property (strong,nonatomic,readwrite)NSMutableArray* data;
 @end
 
 @implementation ViewController
@@ -66,10 +66,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    UITableView* tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
-    tableView.dataSource = self;
-    tableView.delegate = self;
-    [self.view addSubview:tableView];
+    _tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    _tableView.dataSource = self;
+    _tableView.delegate = self;
+    _data = @[].mutableCopy;
+    for (int i=0; i<20; i++) {
+        [_data addObject:@(i)];
+    }
+    [self.view addSubview:_tableView];
     
 }
 -(void)pushController{
@@ -80,7 +84,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 20;
+    return _data.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -88,6 +92,7 @@
     if (!cell) {
         cell = [[NewsTableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"id"];
     }
+    cell.delegate  =self;
     [cell fillData];
     return cell;
 }
@@ -101,6 +106,19 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     GTDetailViewController* controller = [[GTDetailViewController alloc]init];
     [self.navigationController pushViewController:controller animated:YES];
+}
+
+-(void)tableViewCell:(UITableViewCell*)tableViewcell deleteBtnClick:(UIButton*)deleteBtn{
+    NSLog(@"tableViewCell delegate deleteBtnClick ");
+    CGRect rect = [tableViewcell convertRect:deleteBtn.frame toView:nil];
+    __weak typeof(self) wself = self;
+    [[[GTDeleteView alloc]initWithFrame:self.view.bounds] showAtPoint:rect.origin clickblock:^{
+        NSLog(@"showAtPoint");
+        __strong typeof(self) strongSelf = wself;
+        [strongSelf.data removeLastObject];
+        [strongSelf.tableView deleteRowsAtIndexPaths: @[[strongSelf.tableView indexPathForCell:tableViewcell]] withRowAnimation:(UITableViewRowAnimationAutomatic)];
+        
+    } ];
 }
 
 

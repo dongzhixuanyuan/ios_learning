@@ -7,6 +7,7 @@
 //
 
 #import "NewsTableViewCell.h"
+#import "GTDeleteView.h"
 
 @interface NewsTableViewCell()
 @property(readwrite,nonatomic,strong)UILabel* title;
@@ -93,7 +94,10 @@
 }
 
 -(void)rightBtnClicked{
-    NSLog(@"rightBtnClicked");
+    //    NSLog(@"rightBtnClicked");
+    if(self.delegate && [self.delegate respondsToSelector:@selector(tableViewCell:deleteBtnClick:)]){
+        [self.delegate tableViewCell:self deleteBtnClick:_btn];
+    }
 }
 
 @end

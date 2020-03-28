@@ -10,7 +10,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol NewsTableViewCellDelegate <NSObject>
+
+-(void)tableViewCell:(UITableViewCell*)tableViewcell deleteBtnClick:(UIButton*)deleteBtn;
+@end
+
+
+
 @interface NewsTableViewCell : UITableViewCell
+@property (weak,nonatomic,readwrite) id<NewsTableViewCellDelegate> delegate;
 - (void) fillData;
 @end
 

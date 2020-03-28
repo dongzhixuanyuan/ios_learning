@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A01636FF242EF1F800C200B6 /* GTDeleteView.m in Sources */ = {isa = PBXBuildFile; fileRef = A01636FE242EF1F800C200B6 /* GTDeleteView.m */; };
 		A026D39D242B3D0F005CE0E7 /* GTDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A026D39C242B3D0F005CE0E7 /* GTDetailViewController.m */; };
 		A04EED25241F1DEE00FAF693 /* GTVideoController.m in Sources */ = {isa = PBXBuildFile; fileRef = A04EED24241F1DEE00FAF693 /* GTVideoController.m */; };
 		A04EED28241FC75D00FAF693 /* RecommandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A04EED27241FC75D00FAF693 /* RecommandViewController.m */; };
@@ -39,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A01636FD242EF1F800C200B6 /* GTDeleteView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTDeleteView.h; sourceTree = "<group>"; };
+		A01636FE242EF1F800C200B6 /* GTDeleteView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTDeleteView.m; sourceTree = "<group>"; };
 		A026D39B242B3D0F005CE0E7 /* GTDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTDetailViewController.h; sourceTree = "<group>"; };
 		A026D39C242B3D0F005CE0E7 /* GTDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTDetailViewController.m; sourceTree = "<group>"; };
 		A048FCA6241E2A720076F2E1 /* icon.bundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = icon.bundle.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,6 +156,8 @@
 				A04EED2A2420AB0800FAF693 /* NewsTableViewCell.m */,
 				A026D39B242B3D0F005CE0E7 /* GTDetailViewController.h */,
 				A026D39C242B3D0F005CE0E7 /* GTDetailViewController.m */,
+				A01636FD242EF1F800C200B6 /* GTDeleteView.h */,
+				A01636FE242EF1F800C200B6 /* GTDeleteView.m */,
 			);
 			path = SampleApp;
 			sourceTree = "<group>";
@@ -346,6 +351,7 @@
 				A070E92C241D15790080169A /* main.m in Sources */,
 				A070E91E241D15770080169A /* SceneDelegate.m in Sources */,
 				A04EED28241FC75D00FAF693 /* RecommandViewController.m in Sources */,
+				A01636FF242EF1F800C200B6 /* GTDeleteView.m in Sources */,
 				A04EED2B2420AB0800FAF693 /* NewsTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
