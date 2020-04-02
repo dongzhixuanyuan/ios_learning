@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+/// 新闻类的viewcontroller
+@interface GTNewsViewController : UIViewController
 
 
 @end

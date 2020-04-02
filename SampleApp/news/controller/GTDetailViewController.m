@@ -9,11 +9,20 @@
 #import "GTDetailViewController.h"
 #import <WebKit/WebKit.h>
 @interface GTDetailViewController ()
+//如何属性或者方法只要以init作为前缀开头，那么其返回值必须是类的类型。特别强调下属性也必须遵守该规则。
 @property(nonatomic,strong,readwrite)WKWebView* webview;
 @property(nonatomic,strong,readwrite)UIProgressView* progress;
+@property(nonatomic,strong,readwrite)NSURL* loadUrl;
 @end
 
 @implementation GTDetailViewController
+
+- (instancetype)initWithUrl:(NSURL *)url {
+    self = [super init];
+      _loadUrl = url;
+    return self;
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -23,7 +32,7 @@
         self.webview.navigationDelegate = self;
         self.webview;
     })];
-    [self.webview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:  @"https://time.geekbang.org"]]];
+    [self.webview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:  _loadUrl]]];
     [self.view addSubview:({
         self.progress = [[UIProgressView alloc]initWithFrame:CGRectMake(0, 88, self.view.frame.size.width, 20)];
         self.progress.tintColor = [UIColor greenColor];

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "GTListItemModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol NewsTableViewCellDelegate <NSObject>
@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NewsTableViewCell : UITableViewCell
 @property (weak,nonatomic,readwrite) id<NewsTableViewCellDelegate> delegate;
-- (void) fillData;
+- (void) fillData:(GTListItemModel*)model;
 @end
 
 NS_ASSUME_NONNULL_END
