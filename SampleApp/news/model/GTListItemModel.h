@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 //thumbnail_pic_s03: "http://04imgmini.eastday.com/mobile/20200402/20200402192341_0c095a6cf8b1c036b11e48b07c2aa1d2_3_mwpm_03200403.jpg"
 //},
 
-@interface GTListItemModel : NSObject
+@interface GTListItemModel : NSObject<NSSecureCoding>
 @property(nonatomic,copy,readwrite)NSString* uniquekey ;
 @property(nonatomic,copy,readwrite)NSString* title;
 @property(nonatomic,copy,readwrite)NSString* date;
