@@ -11,13 +11,22 @@
 #import "GTListItemModel.h"
 @implementation GTListLoader
 - (void)loadListData:(GTListLoaderFinishBlock)block {
+    
+    NSArray<GTListItemModel*>* cacheItems =  [self loadDataFromDisk];
+    if(cacheItems !=nil){
+        block(YES,cacheItems);
+        return;
+    }
+    
     NSString *urlStr = @"http://v.juhe.cn/toutiao/index?type=top&key=97ad001bfcc2082e2eeaf798bad3d54e";
-//    [[AFHTTPSessionManager manager] GET:urlStr parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+    //    [[AFHTTPSessionManager manager] GET:urlStr parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
 //    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
 //        NSLog(@"success");
 //    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
 //        NSLog(@"failure");
 //    }];
+    
+    
     __weak typeof (self) weakSelf = self;
     __unused NSURL *url = [NSURL URLWithString:urlStr];
     NSURLSession *session = [NSURLSession sharedSession];
@@ -62,8 +71,12 @@
     NSData* cacheData = [fileManager contentsAtPath:newFile];
     
     
-    
     NSArray<GTListItemModel*>* modelFromCache = [NSKeyedUnarchiver unarchivedObjectOfClasses:[NSSet setWithObjects: [NSArray class],[GTListItemModel class] , nil] fromData:cacheData error:nil];
+    
+    
+    [[NSUserDefaults standardUserDefaults]setObject:itemsBytes forKey:@"savedata"];
+    
+    
     
     
 //    BOOL exist = [fileManager fileExistsAtPath:newFile];
@@ -76,13 +89,25 @@
 //    [handle synchronizeFile];
 //    [handle closeFile];
 
-    
-    
-    
-    
+
     NSLog(@"");
     
-    
-    
 }
+
+- (NSArray<GTListItemModel*>*) loadDataFromDisk {
+    NSArray<NSString*>*   paths =  NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+    
+    NSString* newFile = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"GTData/list"];
+    NSFileManager* fileManager = [NSFileManager defaultManager];
+    NSError* error = [[NSError alloc] init];
+    NSData* data = [fileManager contentsAtPath:newFile];
+    id items = [NSKeyedUnarchiver unarchivedObjectOfClasses:[NSSet setWithObjects: [NSArray class],[GTListItemModel class], nil] fromData:data error:&error ];
+    
+    if([items isKindOfClass: [NSArray class]] && [items count]>0){
+        return (NSArray<GTListItemModel*>*)items;
+    }
+    return nil;
+
+}
+
 @end

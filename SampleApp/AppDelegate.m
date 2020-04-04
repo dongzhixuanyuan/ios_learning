@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "NewsTableViewCell.h"
 
 @interface AppDelegate ()
 
@@ -36,6 +37,13 @@
     // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
 }
 
+- (void)applicationWillTerminate:(UIApplication *)application {
+    [NewsTableViewCell flushReadedItems];
+}
+
+- (void)applicationWillResignActive:(UIApplication *)application{
+    [NewsTableViewCell flushReadedItems];
+}
 
 @end
 

@@ -11,6 +11,5 @@
 /// 新闻类的viewcontroller
 @interface GTNewsViewController : UIViewController
 
-
 @end
 

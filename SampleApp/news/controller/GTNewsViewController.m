@@ -19,6 +19,7 @@
 @property (strong, nonatomic, readwrite) GTListLoader *loader;
 @end
 
+
 @implementation GTNewsViewController
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -50,6 +51,8 @@
     [_loader loadListData:^(BOOL success, NSArray<GTListItemModel *> *array) {
         __strong typeof(wself)sself =wself;
         NSLog(@"");
+        NSArray* readItems = [[NSUserDefaults standardUserDefaults] arrayForKey:KEY_FOR_READ_ITEMS];
+        
         sself.data = array;
         [sself.tableView reloadData];
     } ];
@@ -84,7 +87,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     GTDetailViewController *controller = [[GTDetailViewController alloc] initWithUrl: [_data  objectAtIndex:indexPath.item].url];
+    
+    [NewsTableViewCell addReadedItem: [_data objectAtIndex:indexPath.row].uniquekey];
+    
     [self.navigationController pushViewController:controller animated:YES];
+
 }
 
 - (void)tableViewCell:(UITableViewCell *)tableViewcell deleteBtnClick:(UIButton *)deleteBtn {
