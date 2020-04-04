@@ -114,8 +114,29 @@ static NSMutableArray<NSString *> *readedItems;
     self.timestamp.text = model.date;
     [self.timestamp sizeToFit];
     self.timestamp.frame = CGRectMake(self.comment.frame.origin.x + self.comment.frame.size.width + 15, self.timestamp.frame.origin.y, self.timestamp.frame.size.width, self.timestamp.frame.size.height);
-    UIImage *imageData = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:model.thumbnail_pic_s] ] ];
-    self.rightImageView.image = imageData;
+    
+//    todo 需要学习下如何获取主线程的queue.
+//    NSOperationQueue* queue = [[NSOperationQueue alloc]init];
+//    NSBlockOperation* operation = [[NSBlockOperation alloc]init];
+//    [operation addExecutionBlock:^{
+//        UIImage *imageData = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:model.thumbnail_pic_s] ] ];
+//
+//        self.rightImageView.image = imageData;
+//    } ];
+//    [queue addOperation:operation];
+    
+    
+    
+    
+    
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+        UIImage *imageData = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:model.thumbnail_pic_s] ] ];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.rightImageView.image = imageData;
+        });
+    });
+    
 }
 
 - (void)rightBtnClicked {

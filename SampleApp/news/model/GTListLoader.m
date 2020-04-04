@@ -15,7 +15,6 @@
     NSArray<GTListItemModel*>* cacheItems =  [self loadDataFromDisk];
     if(cacheItems !=nil){
         block(YES,cacheItems);
-        return;
     }
     
     NSString *urlStr = @"http://v.juhe.cn/toutiao/index?type=top&key=97ad001bfcc2082e2eeaf798bad3d54e";

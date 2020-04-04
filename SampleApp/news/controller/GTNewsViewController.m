@@ -52,7 +52,6 @@
         __strong typeof(wself)sself =wself;
         NSLog(@"");
         NSArray* readItems = [[NSUserDefaults standardUserDefaults] arrayForKey:KEY_FOR_READ_ITEMS];
-        
         sself.data = array;
         [sself.tableView reloadData];
     } ];
