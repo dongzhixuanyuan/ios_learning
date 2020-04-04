@@ -8,6 +8,7 @@
 
 #import "NewsTableViewCell.h"
 #import "GTDeleteView.h"
+#import <SDWebImage.h>
 
 static NSMutableArray<NSString *> *readedItems;
 @interface NewsTableViewCell ()
@@ -124,18 +125,20 @@ static NSMutableArray<NSString *> *readedItems;
 //        self.rightImageView.image = imageData;
 //    } ];
 //    [queue addOperation:operation];
+    [self.rightImageView sd_setImageWithURL:[NSURL URLWithString:model.thumbnail_pic_s] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+        [self.rightImageView setImage:image];
+    }];
     
     
     
     
     
-    
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-        UIImage *imageData = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:model.thumbnail_pic_s] ] ];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            self.rightImageView.image = imageData;
-        });
-    });
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+//        UIImage *imageData = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:model.thumbnail_pic_s] ] ];
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            self.rightImageView.image = imageData;
+//        });
+//    });
     
 }
 
