@@ -7,7 +7,7 @@
 //
 
 #import "GTVideoController.h"
-
+#import "GTVideoViewCollectionViewCell.h"
 @implementation GTVideoController
 
 + (instancetype)initWithParams:(NSString *)title unselectedImage:(UIImage *)unselectedImage selectedImage:(UIImage *)selectedImage{
@@ -30,7 +30,7 @@
     UICollectionView* collectionView = [[UICollectionView alloc]initWithFrame:self.view.bounds collectionViewLayout:layout];
     collectionView.delegate = self;
     collectionView.dataSource = self;
-    [collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"UICollectionViewCell"];
+    [collectionView registerClass:[GTVideoViewCollectionViewCell class] forCellWithReuseIdentifier:@"GTVideoViewCollectionViewCell"];
     [self.view addSubview:collectionView];
 }
 
@@ -40,16 +40,13 @@
 
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    UICollectionViewCell* cell =  [collectionView dequeueReusableCellWithReuseIdentifier:@"UICollectionViewCell" forIndexPath:indexPath];
+    GTVideoViewCollectionViewCell* cell =  [collectionView dequeueReusableCellWithReuseIdentifier:@"GTVideoViewCollectionViewCell" forIndexPath:indexPath];
+    [cell layoutwithVideoUrl:@"https://stream7.iqilu.com/10339/upload_transcode/202002/18/20200218114723HDu3hhxqIT.mp4" coverUrl:@"videoCover"];
     cell.backgroundColor =[UIColor redColor];
     return cell;
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
-    if(indexPath.item %3 ==0){
-        return CGSizeMake(self.view.frame.size.width, 100);
-    }else{
-        return CGSizeMake((self.view.frame.size.width-10)/2, 300);
-    }
+    return CGSizeMake((self.view.frame.size.width-10), (self.view.frame.size.width-10)*9/16);
 }
 @end
