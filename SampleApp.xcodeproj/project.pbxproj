@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		164A1A3F4589F9DBFF239FD5 /* libPods-SampleApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A86171B13A2E299C341A1EB1 /* libPods-SampleApp.a */; };
+		A0081D5E243D62B00046FFEE /* GTPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A0081D5D243D62B00046FFEE /* GTPlayer.m */; };
 		A00CF00F24304D510053E4DE /* GTListLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = A00CF00E24304D510053E4DE /* GTListLoader.m */; };
 		A01636FF242EF1F800C200B6 /* GTDeleteView.m in Sources */ = {isa = PBXBuildFile; fileRef = A01636FE242EF1F800C200B6 /* GTDeleteView.m */; };
 		A026D39D242B3D0F005CE0E7 /* GTDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A026D39C242B3D0F005CE0E7 /* GTDetailViewController.m */; };
@@ -45,6 +46,8 @@
 
 /* Begin PBXFileReference section */
 		0A85F1CB334254703CE60914 /* Pods-SampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleApp.debug.xcconfig"; path = "Target Support Files/Pods-SampleApp/Pods-SampleApp.debug.xcconfig"; sourceTree = "<group>"; };
+		A0081D5C243D62B00046FFEE /* GTPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTPlayer.h; sourceTree = "<group>"; };
+		A0081D5D243D62B00046FFEE /* GTPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTPlayer.m; sourceTree = "<group>"; };
 		A00CF00D24304D510053E4DE /* GTListLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTListLoader.h; sourceTree = "<group>"; };
 		A00CF00E24304D510053E4DE /* GTListLoader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTListLoader.m; sourceTree = "<group>"; };
 		A01636FD242EF1F800C200B6 /* GTDeleteView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTDeleteView.h; sourceTree = "<group>"; };
@@ -143,6 +146,8 @@
 				A04EED24241F1DEE00FAF693 /* GTVideoController.m */,
 				A0526F272439CF86000E6800 /* GTVideoViewCollectionViewCell.h */,
 				A0526F282439CF86000E6800 /* GTVideoViewCollectionViewCell.m */,
+				A0081D5C243D62B00046FFEE /* GTPlayer.h */,
+				A0081D5D243D62B00046FFEE /* GTPlayer.m */,
 			);
 			path = video;
 			sourceTree = "<group>";
@@ -465,6 +470,7 @@
 				A070E92C241D15790080169A /* main.m in Sources */,
 				A0526F292439CF86000E6800 /* GTVideoViewCollectionViewCell.m in Sources */,
 				A00CF00F24304D510053E4DE /* GTListLoader.m in Sources */,
+				A0081D5E243D62B00046FFEE /* GTPlayer.m in Sources */,
 				A070E91E241D15770080169A /* SceneDelegate.m in Sources */,
 				A04EED28241FC75D00FAF693 /* RecommandViewController.m in Sources */,
 				A01636FF242EF1F800C200B6 /* GTDeleteView.m in Sources */,
