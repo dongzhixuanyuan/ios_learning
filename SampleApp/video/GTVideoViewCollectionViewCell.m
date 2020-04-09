@@ -9,6 +9,7 @@
 
 #import "GTVideoViewCollectionViewCell.h"
 #import "GTPlayer.h"
+#import "GTVideoToolbar.h"
 @interface GTVideoViewCollectionViewCell()
 @property(nonatomic,strong,readwrite)UIImageView* coverView;
 @property(nonatomic,strong,readwrite)UIImageView* playBtn;
@@ -24,12 +25,17 @@
     self = [super initWithFrame:frame];
     if (self) {
         [self addSubview:({
-            _coverView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
+            _coverView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height - 50)];
             _coverView;
         })];
         [_coverView addSubview:({
-            _playBtn = [[UIImageView alloc]initWithFrame:CGRectMake((frame.size.width-50)/2, (frame.size.height-50)/2, 50, 50)];
+            _playBtn = [[UIImageView alloc]initWithFrame:CGRectMake((frame.size.width-50)/2, (_coverView. frame.size.height-50)/2, 50, 50)];
             _playBtn;
+        })];
+        [self addSubview:({
+            GTVideoToolbar* toolBar = [[GTVideoToolbar alloc]initWithFrame:CGRectMake(0, _coverView.frame.size.height, self.frame.size.width, 50)];
+            [toolBar fillData:nil];
+            toolBar;
         })];
         [self addGestureRecognizer: [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(_tapPlayBtn)] ];
     }
