@@ -28,6 +28,7 @@
     layout.minimumInteritemSpacing = 10;
     layout.itemSize = CGSizeMake((self.view.frame.size.width -10)/2, 300);
     UICollectionView* collectionView = [[UICollectionView alloc]initWithFrame:self.view.bounds collectionViewLayout:layout];
+    collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentAutomatic;
     collectionView.delegate = self;
     collectionView.dataSource = self;
     [collectionView registerClass:[GTVideoViewCollectionViewCell class] forCellWithReuseIdentifier:@"GTVideoViewCollectionViewCell"];

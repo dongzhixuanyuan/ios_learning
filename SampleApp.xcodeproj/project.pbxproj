@@ -10,6 +10,7 @@
 		164A1A3F4589F9DBFF239FD5 /* libPods-SampleApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A86171B13A2E299C341A1EB1 /* libPods-SampleApp.a */; };
 		A0081D5E243D62B00046FFEE /* GTPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A0081D5D243D62B00046FFEE /* GTPlayer.m */; };
 		A0081D61243D845F0046FFEE /* GTVideoToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = A0081D60243D845F0046FFEE /* GTVideoToolbar.m */; };
+		A0081D64243F68910046FFEE /* UIAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = A0081D63243F68910046FFEE /* UIAdapter.m */; };
 		A00CF00F24304D510053E4DE /* GTListLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = A00CF00E24304D510053E4DE /* GTListLoader.m */; };
 		A01636FF242EF1F800C200B6 /* GTDeleteView.m in Sources */ = {isa = PBXBuildFile; fileRef = A01636FE242EF1F800C200B6 /* GTDeleteView.m */; };
 		A026D39D242B3D0F005CE0E7 /* GTDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A026D39C242B3D0F005CE0E7 /* GTDetailViewController.m */; };
@@ -21,10 +22,10 @@
 		A070E91E241D15770080169A /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A070E91D241D15770080169A /* SceneDelegate.m */; };
 		A070E921241D15770080169A /* GTNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A070E920241D15770080169A /* GTNewsViewController.m */; };
 		A070E926241D15790080169A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A070E925241D15790080169A /* Assets.xcassets */; };
-		A070E929241D15790080169A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A070E927241D15790080169A /* LaunchScreen.storyboard */; };
 		A070E92C241D15790080169A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A070E92B241D15790080169A /* main.m */; };
 		A070E936241D15790080169A /* SampleAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A070E935241D15790080169A /* SampleAppTests.m */; };
 		A070E941241D15790080169A /* SampleAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A070E940241D15790080169A /* SampleAppUITests.m */; };
+		A0AD3D642441BEF000C0A202 /* GTSplashView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AD3D632441BEF000C0A202 /* GTSplashView.m */; };
 		A0D080C32431D8CB00BDBF9F /* GTListItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D080C22431D8CB00BDBF9F /* GTListItemModel.m */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,8 @@
 		A0081D5D243D62B00046FFEE /* GTPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTPlayer.m; sourceTree = "<group>"; };
 		A0081D5F243D845F0046FFEE /* GTVideoToolbar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTVideoToolbar.h; sourceTree = "<group>"; };
 		A0081D60243D845F0046FFEE /* GTVideoToolbar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTVideoToolbar.m; sourceTree = "<group>"; };
+		A0081D62243F68910046FFEE /* UIAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIAdapter.h; sourceTree = "<group>"; };
+		A0081D63243F68910046FFEE /* UIAdapter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIAdapter.m; sourceTree = "<group>"; };
 		A00CF00D24304D510053E4DE /* GTListLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTListLoader.h; sourceTree = "<group>"; };
 		A00CF00E24304D510053E4DE /* GTListLoader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTListLoader.m; sourceTree = "<group>"; };
 		A01636FD242EF1F800C200B6 /* GTDeleteView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTDeleteView.h; sourceTree = "<group>"; };
@@ -76,7 +79,6 @@
 		A070E91F241D15770080169A /* GTNewsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTNewsViewController.h; sourceTree = "<group>"; };
 		A070E920241D15770080169A /* GTNewsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTNewsViewController.m; sourceTree = "<group>"; };
 		A070E925241D15790080169A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A070E928241D15790080169A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A070E92A241D15790080169A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A070E92B241D15790080169A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A070E931241D15790080169A /* SampleAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SampleAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,6 +87,8 @@
 		A070E93C241D15790080169A /* SampleAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SampleAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A070E940241D15790080169A /* SampleAppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SampleAppUITests.m; sourceTree = "<group>"; };
 		A070E942241D15790080169A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0AD3D622441BEF000C0A202 /* GTSplashView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTSplashView.h; sourceTree = "<group>"; };
+		A0AD3D632441BEF000C0A202 /* GTSplashView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTSplashView.m; sourceTree = "<group>"; };
 		A0D080C12431D8CB00BDBF9F /* GTListItemModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTListItemModel.h; sourceTree = "<group>"; };
 		A0D080C22431D8CB00BDBF9F /* GTListItemModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTListItemModel.m; sourceTree = "<group>"; };
 		A86171B13A2E299C341A1EB1 /* libPods-SampleApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SampleApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -193,11 +197,14 @@
 				A070E91C241D15770080169A /* SceneDelegate.h */,
 				A070E91D241D15770080169A /* SceneDelegate.m */,
 				A070E925241D15790080169A /* Assets.xcassets */,
-				A070E927241D15790080169A /* LaunchScreen.storyboard */,
 				A070E92A241D15790080169A /* Info.plist */,
 				A070E92B241D15790080169A /* main.m */,
 				A04EED26241FC75D00FAF693 /* RecommandViewController.h */,
 				A04EED27241FC75D00FAF693 /* RecommandViewController.m */,
+				A0081D62243F68910046FFEE /* UIAdapter.h */,
+				A0081D63243F68910046FFEE /* UIAdapter.m */,
+				A0AD3D622441BEF000C0A202 /* GTSplashView.h */,
+				A0AD3D632441BEF000C0A202 /* GTSplashView.m */,
 			);
 			path = SampleApp;
 			sourceTree = "<group>";
@@ -409,7 +416,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A070E929241D15790080169A /* LaunchScreen.storyboard in Resources */,
 				A070E926241D15790080169A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -475,7 +481,9 @@
 				A070E92C241D15790080169A /* main.m in Sources */,
 				A0081D61243D845F0046FFEE /* GTVideoToolbar.m in Sources */,
 				A0526F292439CF86000E6800 /* GTVideoViewCollectionViewCell.m in Sources */,
+				A0081D64243F68910046FFEE /* UIAdapter.m in Sources */,
 				A00CF00F24304D510053E4DE /* GTListLoader.m in Sources */,
+				A0AD3D642441BEF000C0A202 /* GTSplashView.m in Sources */,
 				A0081D5E243D62B00046FFEE /* GTPlayer.m in Sources */,
 				A070E91E241D15770080169A /* SceneDelegate.m in Sources */,
 				A04EED28241FC75D00FAF693 /* RecommandViewController.m in Sources */,
@@ -514,17 +522,6 @@
 			targetProxy = A070E93D241D15790080169A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		A070E927241D15790080169A /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A070E928241D15790080169A /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		A048FCA9241E2A720076F2E1 /* Debug */ = {
@@ -676,6 +673,7 @@
 			baseConfigurationReference = 0A85F1CB334254703CE60914 /* Pods-SampleApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SampleApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -693,6 +691,7 @@
 			baseConfigurationReference = B5E41D92B6D141120D285195 /* Pods-SampleApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SampleApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -9,6 +9,7 @@
 #import "NewsTableViewCell.h"
 #import "GTDeleteView.h"
 #import <SDWebImage.h>
+#import "UIAdapter.h"
 
 static NSMutableArray<NSString *> *readedItems;
 @interface NewsTableViewCell ()
@@ -44,7 +45,7 @@ static NSMutableArray<NSString *> *readedItems;
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         [self.contentView addSubview:({
-            self.title = [[UILabel alloc]initWithFrame:CGRectMake(20, 30, 250, 50)];
+            self.title = [[UILabel alloc]initWithFrame:UIRect(20, 30, 250, 50)];
 
             self.title.font = [UIFont systemFontOfSize:(16)];
             self.title.textColor = [UIColor blackColor];
@@ -54,14 +55,14 @@ static NSMutableArray<NSString *> *readedItems;
         })];
 
         [self.contentView addSubview:({
-            self.source = [[UILabel alloc]initWithFrame:CGRectMake(20, 70, 50, 20)];
+            self.source = [[UILabel alloc]initWithFrame:UIRect(20, 70, 50, 20)];
             self.source.font = [UIFont systemFontOfSize:(12)];
             self.source.textColor = [UIColor grayColor];
             self.source;
         })];
 
         [self.contentView addSubview:({
-            self.comment = [[UILabel alloc]initWithFrame:CGRectMake(70, 70, 50, 20)];
+            self.comment = [[UILabel alloc]initWithFrame:UIRect(70, 70, 50, 20)];
 
             self.comment.font = [UIFont systemFontOfSize:(12)];
             self.comment.textColor = [UIColor grayColor];
@@ -69,7 +70,7 @@ static NSMutableArray<NSString *> *readedItems;
         })];
 
         [self.contentView addSubview:({
-            self.timestamp = [[UILabel alloc]initWithFrame:CGRectMake(100, 70, 50, 20)];
+            self.timestamp = [[UILabel alloc]initWithFrame:UIRect(100, 70, 50, 20)];
 
             self.timestamp.font = [UIFont systemFontOfSize:(12)];
             self.timestamp.textColor = [UIColor grayColor];
@@ -77,7 +78,7 @@ static NSMutableArray<NSString *> *readedItems;
         })];
 
         [self.contentView addSubview:({
-            self.rightImageView = [[UIImageView alloc] initWithFrame:CGRectMake(330, 15, 70, 70)];
+            self.rightImageView = [[UIImageView alloc] initWithFrame:UIRect(330, 15, 70, 70)];
 
             self.rightImageView.contentMode = UIViewContentModeScaleAspectFit;
             self.rightImageView;
@@ -111,10 +112,10 @@ static NSMutableArray<NSString *> *readedItems;
     [self.source sizeToFit];
     self.comment.text = model.author_name;
     [self.comment sizeToFit];
-    self.comment.frame = CGRectMake(self.source.frame.origin.x + self.source.frame.size.width + 15, self.comment.frame.origin.y, self.comment.frame.size.width, self.comment.frame.size.height);
+    self.comment.frame = CGRectMake(self.source.frame.origin.x + self.source.frame.size.width + UI(15), self.comment.frame.origin.y, self.comment.frame.size.width, self.comment.frame.size.height);
     self.timestamp.text = model.date;
     [self.timestamp sizeToFit];
-    self.timestamp.frame = CGRectMake(self.comment.frame.origin.x + self.comment.frame.size.width + 15, self.timestamp.frame.origin.y, self.timestamp.frame.size.width, self.timestamp.frame.size.height);
+    self.timestamp.frame = CGRectMake(self.comment.frame.origin.x + self.comment.frame.size.width + UI(15), self.timestamp.frame.origin.y, self.timestamp.frame.size.width, self.timestamp.frame.size.height);
     
 //    todo 需要学习下如何获取主线程的queue.
 //    NSOperationQueue* queue = [[NSOperationQueue alloc]init];

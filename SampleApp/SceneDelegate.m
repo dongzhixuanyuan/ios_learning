@@ -2,7 +2,7 @@
 #import "GTNewsViewController.h"
 #import "GTVideoController.h"
 #import "RecommandViewController.h"
-
+#import "GTSplashView.h"
 @interface SceneDelegate ()<UITableViewDelegate>
 
 @end
@@ -38,6 +38,10 @@
 
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
+    
+    GTSplashView* splashView = [[GTSplashView alloc]initWithFrame:self.window.bounds];
+    [self.window addSubview:splashView];
+    
 }
 
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
