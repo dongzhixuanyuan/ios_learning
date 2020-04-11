@@ -53,6 +53,15 @@
 }
 -(void)viewClicked{
     NSLog(@"viewClicked");
+    NSURL* tartgetAppUrl = [NSURL URLWithString:@"schematest://"];
+    BOOL canOpen = [[UIApplication sharedApplication]canOpenURL:tartgetAppUrl];
+    if (canOpen) {
+        [[UIApplication sharedApplication] openURL: tartgetAppUrl options:nil completionHandler:^(BOOL success) {
+            
+        }];
+    }else {
+        
+    }
 }
  // any offset changes
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{

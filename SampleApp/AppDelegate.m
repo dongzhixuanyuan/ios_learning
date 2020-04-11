@@ -44,6 +44,11 @@
 - (void)applicationWillResignActive:(UIApplication *)application{
     [NewsTableViewCell flushReadedItems];
 }
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options{
+    NSError* error  = [[NSError alloc] init];
+    NSLog(@"%@",[NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error]);
+    return YES;
+}
 
 @end
 
