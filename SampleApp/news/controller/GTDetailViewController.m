@@ -9,6 +9,7 @@
 #import "GTDetailViewController.h"
 #import <WebKit/WebKit.h>
 #import "UIAdapter.h"
+#import "GTMediator.h"
 @interface GTDetailViewController ()
 //如何属性或者方法只要以init作为前缀开头，那么其返回值必须是类的类型。特别强调下属性也必须遵守该规则。
 @property (nonatomic, strong, readwrite) WKWebView *webview;
@@ -18,11 +19,24 @@
 
 @implementation GTDetailViewController
 
+
+//load方法是所有类加载时，由系统调用的。
++ (void)load {
+    [GTMediator registerSchema:@"detail" callBack:^(NSDictionary * params) {
+        NSString* url = [params objectForKey:@"url"];
+        UINavigationController* controller = [params objectForKey:@"viewController"];
+        GTDetailViewController* viewController = [[GTDetailViewController alloc] initWithUrl:[NSURL URLWithString:url]];
+        [controller pushViewController:viewController animated:YES];
+    }];
+    
+    [GTMediator registerProtocol:@protocol(GTDetailViewProtocol) class:[self class]];
+}
 - (instancetype)initWithUrl:(NSURL *)url {
     self = [super init];
     _loadUrl = url;
     return self;
 }
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -32,7 +46,7 @@
         self.webview.navigationDelegate = self;
         self.webview;
     })];
-    [self.webview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_loadUrl]]];
+    [self.webview loadRequest:[NSURLRequest requestWithURL:_loadUrl]];
     [self.view addSubview:({
         self.progress = [[UIProgressView alloc]initWithFrame:CGRectMake(0, topMargin, self.view.frame.size.width, 20)];
         self.progress.tintColor = [UIColor greenColor];

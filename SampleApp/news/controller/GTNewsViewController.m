@@ -12,13 +12,13 @@
 #import "GTDeleteView.h"
 #import "GTListLoader.h"
 #import "GTListItemModel.h"
+#import "GTMediator.h"
 
 @interface GTNewsViewController ()<UITableViewDataSource, UITableViewDelegate, NewsTableViewCellDelegate>
 @property (strong, nonatomic, readwrite) UITableView *tableView;
-@property (strong, nonatomic, readwrite) NSArray<GTListItemModel*> *data;
+@property (strong, nonatomic, readwrite) NSArray<GTListItemModel *> *data;
 @property (strong, nonatomic, readwrite) GTListLoader *loader;
 @end
-
 
 @implementation GTNewsViewController
 
@@ -47,11 +47,11 @@
     _data = @[].mutableCopy;
     [self.view addSubview:_tableView];
     _loader = [[GTListLoader alloc]init];
-    __weak typeof (self)wself = self;
+    __weak typeof (self) wself = self;
     [_loader loadListData:^(BOOL success, NSArray<GTListItemModel *> *array) {
-        __strong typeof(wself)sself =wself;
+        __strong typeof(wself) sself = wself;
         NSLog(@"");
-        NSArray* readItems = [[NSUserDefaults standardUserDefaults] arrayForKey:KEY_FOR_READ_ITEMS];
+        NSArray *readItems = [[NSUserDefaults standardUserDefaults] arrayForKey:KEY_FOR_READ_ITEMS];
         sself.data = array;
         [sself.tableView reloadData];
     } ];
@@ -85,12 +85,22 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    GTDetailViewController *controller = [[GTDetailViewController alloc] initWithUrl: [_data  objectAtIndex:indexPath.item].url];
-    
-    [NewsTableViewCell addReadedItem: [_data objectAtIndex:indexPath.row].uniquekey];
-    
-    [self.navigationController pushViewController:controller animated:YES];
+//    GTDetailViewController *controller = [[GTDetailViewController alloc] initWithUrl: [_data  objectAtIndex:indexPath.item].url];
 
+    [NewsTableViewCell addReadedItem:[_data objectAtIndex:indexPath.row].uniquekey];
+
+//    NSMutableDictionary *dictionary = [[NSMutableDictionary alloc]init];
+//    [dictionary setObject:[_data objectAtIndex:indexPath.item].url forKey:@"url"];
+//    [dictionary setObject:self.navigationController forKey:@"viewController"];
+//    [GTMediator openDetailUrlWithSchema:@"detail" params:dictionary];
+
+    Class class = [GTMediator classForProtocol:@protocol(GTDetailViewProtocol)];
+    UIViewController* protocolViewController = [[class alloc] initWithUrl:[NSURL URLWithString:[_data objectAtIndex:indexPath.item].url]];
+    
+
+//    __kindof UIViewController *controller =  [GTMediator openDetailUrl:[_data objectAtIndex:indexPath.item].url];
+
+    [self.navigationController pushViewController:protocolViewController animated:YES];
 }
 
 - (void)tableViewCell:(UITableViewCell *)tableViewcell deleteBtnClick:(UIButton *)deleteBtn {

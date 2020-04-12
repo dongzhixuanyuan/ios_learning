@@ -10,9 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface GTDetailViewController<WKNavigationDelegate> : UIViewController
+@interface GTDetailViewController<WKNavigationDelegate,GTDetailViewProtocol> : UIViewController
 
--(instancetype) initWithUrl:(NSURL*) url;
+//-(__kindof UIViewController*) initWithUrl:(NSURL*) url;
 
 @end
 
