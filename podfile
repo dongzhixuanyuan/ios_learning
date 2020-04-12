@@ -1,0 +1,5 @@
+target 'SampleApp' do
+  pod 'AFNetworking'
+  pod 'YYModel'
+  pod 'SDWebImage'
+end
