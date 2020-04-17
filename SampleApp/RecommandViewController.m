@@ -56,12 +56,15 @@
     NSURL* tartgetAppUrl = [NSURL URLWithString:@"schematest://"];
     BOOL canOpen = [[UIApplication sharedApplication]canOpenURL:tartgetAppUrl];
     if (canOpen) {
-        [[UIApplication sharedApplication] openURL: tartgetAppUrl options:nil completionHandler:^(BOOL success) {
-            
-        }];
-    }else {
+//        [[UIApplication sharedApplication] openURL: tartgetAppUrl options:nil completionHandler:^(BOOL success) {
+//
+//        }];
+    } else {
         
     }
+    
+    NSNotification* notification = [NSNotification notificationWithName:@"selectPosition" object:nil userInfo:[NSDictionary dictionaryWithObject:@"codeABC" forKey:@"code"]];
+    [[NSNotificationCenter defaultCenter]postNotification:notification];
 }
  // any offset changes
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{

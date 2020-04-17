@@ -13,6 +13,12 @@
 		A0081D64243F68910046FFEE /* UIAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = A0081D63243F68910046FFEE /* UIAdapter.m */; };
 		A00CF00F24304D510053E4DE /* GTListLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = A00CF00E24304D510053E4DE /* GTListLoader.m */; };
 		A01636FF242EF1F800C200B6 /* GTDeleteView.m in Sources */ = {isa = PBXBuildFile; fileRef = A01636FE242EF1F800C200B6 /* GTDeleteView.m */; };
+		A018482D2449A34B001DB3D5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0AD3E07244465BC00C0A202 /* CoreGraphics.framework */; };
+		A018482F2449A34C001DB3D5 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0AD3E0B244466BF00C0A202 /* CoreTelephony.framework */; };
+		A01848312449A34F001DB3D5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0AD3E012444653B00C0A202 /* Security.framework */; };
+		A01848332449A351001DB3D5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0AD3E05244465B100C0A202 /* SystemConfiguration.framework */; };
+		A01848352449A38C001DB3D5 /* GTFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0AD3DF324445B5A00C0A202 /* GTFramework.framework */; };
+		A01848362449A38C001DB3D5 /* GTFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A0AD3DF324445B5A00C0A202 /* GTFramework.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A026D39D242B3D0F005CE0E7 /* GTDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A026D39C242B3D0F005CE0E7 /* GTDetailViewController.m */; };
 		A04EED25241F1DEE00FAF693 /* GTVideoController.m in Sources */ = {isa = PBXBuildFile; fileRef = A04EED24241F1DEE00FAF693 /* GTVideoController.m */; };
 		A04EED28241FC75D00FAF693 /* RecommandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A04EED27241FC75D00FAF693 /* RecommandViewController.m */; };
@@ -27,6 +33,12 @@
 		A070E941241D15790080169A /* SampleAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A070E940241D15790080169A /* SampleAppUITests.m */; };
 		A0AD3D642441BEF000C0A202 /* GTSplashView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AD3D632441BEF000C0A202 /* GTSplashView.m */; };
 		A0AD3DA82442DD0D00C0A202 /* GTMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AD3DA72442DD0D00C0A202 /* GTMediator.m */; };
+		A0AD3DC5244441E300C0A202 /* libGTStaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0AD3DC4244441E300C0A202 /* libGTStaticLib.a */; };
+		A0AD3DFF24445F8200C0A202 /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0AD3DFD24445F7E00C0A202 /* TencentOpenAPI.framework */; };
+		A0AD3E042444654D00C0A202 /* libiconv.2.4.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A0AD3E032444654D00C0A202 /* libiconv.2.4.0.tbd */; };
+		A0AD3E0A244465CA00C0A202 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A0AD3E09244465CA00C0A202 /* libsqlite3.tbd */; };
+		A0AD3E0E244466D400C0A202 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A0AD3E0D244466D400C0A202 /* libz.tbd */; };
+		A0AD3E10244466DF00C0A202 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A0AD3E0F244466DF00C0A202 /* libc++.tbd */; };
 		A0D080C32431D8CB00BDBF9F /* GTListItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D080C22431D8CB00BDBF9F /* GTListItemModel.m */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +58,20 @@
 			remoteInfo = SampleApp;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A01848372449A38C001DB3D5 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A01848362449A38C001DB3D5 /* GTFramework.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0A85F1CB334254703CE60914 /* Pods-SampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleApp.debug.xcconfig"; path = "Target Support Files/Pods-SampleApp/Pods-SampleApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -92,6 +118,19 @@
 		A0AD3D632441BEF000C0A202 /* GTSplashView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTSplashView.m; sourceTree = "<group>"; };
 		A0AD3DA62442DD0D00C0A202 /* GTMediator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTMediator.h; sourceTree = "<group>"; };
 		A0AD3DA72442DD0D00C0A202 /* GTMediator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTMediator.m; sourceTree = "<group>"; };
+		A0AD3DC4244441E300C0A202 /* libGTStaticLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGTStaticLib.a; sourceTree = "<group>"; };
+		A0AD3DC62444426E00C0A202 /* GTStaticLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTStaticLib.h; sourceTree = "<group>"; };
+		A0AD3DC72444426E00C0A202 /* GTStaticLibTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTStaticLibTest.h; sourceTree = "<group>"; };
+		A0AD3DF324445B5A00C0A202 /* GTFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GTFramework.framework; sourceTree = "<group>"; };
+		A0AD3DFD24445F7E00C0A202 /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TencentOpenAPI.framework; path = "QQ_login/Publish-Sdk3.3.8-Lite/sdk-Lite/TencentOpenAPI.framework"; sourceTree = SOURCE_ROOT; };
+		A0AD3E012444653B00C0A202 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		A0AD3E032444654D00C0A202 /* libiconv.2.4.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.2.4.0.tbd; path = usr/lib/libiconv.2.4.0.tbd; sourceTree = SDKROOT; };
+		A0AD3E05244465B100C0A202 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		A0AD3E07244465BC00C0A202 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A0AD3E09244465CA00C0A202 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		A0AD3E0B244466BF00C0A202 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		A0AD3E0D244466D400C0A202 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		A0AD3E0F244466DF00C0A202 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		A0D080C12431D8CB00BDBF9F /* GTListItemModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTListItemModel.h; sourceTree = "<group>"; };
 		A0D080C22431D8CB00BDBF9F /* GTListItemModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTListItemModel.m; sourceTree = "<group>"; };
 		A86171B13A2E299C341A1EB1 /* libPods-SampleApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SampleApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,7 +149,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A018482D2449A34B001DB3D5 /* CoreGraphics.framework in Frameworks */,
+				A0AD3E10244466DF00C0A202 /* libc++.tbd in Frameworks */,
+				A01848352449A38C001DB3D5 /* GTFramework.framework in Frameworks */,
+				A0AD3E0E244466D400C0A202 /* libz.tbd in Frameworks */,
+				A0AD3E0A244465CA00C0A202 /* libsqlite3.tbd in Frameworks */,
+				A018482F2449A34C001DB3D5 /* CoreTelephony.framework in Frameworks */,
+				A0AD3E042444654D00C0A202 /* libiconv.2.4.0.tbd in Frameworks */,
+				A0AD3DC5244441E300C0A202 /* libGTStaticLib.a in Frameworks */,
+				A0AD3DFF24445F8200C0A202 /* TencentOpenAPI.framework in Frameworks */,
 				164A1A3F4589F9DBFF239FD5 /* libPods-SampleApp.a in Frameworks */,
+				A01848312449A34F001DB3D5 /* Security.framework in Frameworks */,
+				A01848332449A351001DB3D5 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,6 +241,8 @@
 		A070E918241D15770080169A /* SampleApp */ = {
 			isa = PBXGroup;
 			children = (
+				A0AD3DF024444C6F00C0A202 /* framework */,
+				A0AD3DC3244441B500C0A202 /* staticLib */,
 				A0AD3DA92442DD1900C0A202 /* modulization */,
 				A01637002430469C00C200B6 /* news */,
 				A0526F262439CF50000E6800 /* video */,
@@ -240,6 +292,25 @@
 			path = modulization;
 			sourceTree = "<group>";
 		};
+		A0AD3DC3244441B500C0A202 /* staticLib */ = {
+			isa = PBXGroup;
+			children = (
+				A0AD3DC62444426E00C0A202 /* GTStaticLib.h */,
+				A0AD3DC72444426E00C0A202 /* GTStaticLibTest.h */,
+				A0AD3DC4244441E300C0A202 /* libGTStaticLib.a */,
+			);
+			path = staticLib;
+			sourceTree = "<group>";
+		};
+		A0AD3DF024444C6F00C0A202 /* framework */ = {
+			isa = PBXGroup;
+			children = (
+				A0AD3DFD24445F7E00C0A202 /* TencentOpenAPI.framework */,
+				A0AD3DF324445B5A00C0A202 /* GTFramework.framework */,
+			);
+			path = framework;
+			sourceTree = "<group>";
+		};
 		A0D080BD2431D7FD00BDBF9F /* controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -283,6 +354,14 @@
 		B590E9F3AC59DAFA750AC293 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A0AD3E0F244466DF00C0A202 /* libc++.tbd */,
+				A0AD3E0D244466D400C0A202 /* libz.tbd */,
+				A0AD3E0B244466BF00C0A202 /* CoreTelephony.framework */,
+				A0AD3E09244465CA00C0A202 /* libsqlite3.tbd */,
+				A0AD3E07244465BC00C0A202 /* CoreGraphics.framework */,
+				A0AD3E05244465B100C0A202 /* SystemConfiguration.framework */,
+				A0AD3E032444654D00C0A202 /* libiconv.2.4.0.tbd */,
+				A0AD3E012444653B00C0A202 /* Security.framework */,
 				A86171B13A2E299C341A1EB1 /* libPods-SampleApp.a */,
 			);
 			name = Frameworks;
@@ -325,6 +404,7 @@
 				A070E912241D15770080169A /* Sources */,
 				A070E913241D15770080169A /* Frameworks */,
 				A070E914241D15770080169A /* Resources */,
+				A01848372449A38C001DB3D5 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -689,14 +769,23 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SampleApp/framework",
+					"$(PROJECT_DIR)/QQ_login/Publish-Sdk3.3.8-Lite/sdk-Lite",
+				);
 				INFOPLIST_FILE = SampleApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SampleApp/staticLib",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = youdao.SampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -707,14 +796,23 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SampleApp/framework",
+					"$(PROJECT_DIR)/QQ_login/Publish-Sdk3.3.8-Lite/sdk-Lite",
+				);
 				INFOPLIST_FILE = SampleApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SampleApp/staticLib",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = youdao.SampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

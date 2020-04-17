@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "NewsTableViewCell.h"
+#import <TencentOpenAPI/TencentOAuth.h>
 
 @interface AppDelegate ()
 
@@ -45,9 +46,11 @@
     [NewsTableViewCell flushReadedItems];
 }
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options{
-    NSError* error  = [[NSError alloc] init];
-    NSLog(@"%@",[NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error]);
-    return YES;
+  return [TencentOAuth HandleOpenURL:url];
+}
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    return [TencentOAuth HandleOpenURL:url];
 }
 
 @end

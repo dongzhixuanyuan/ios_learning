@@ -3,6 +3,7 @@
 #import "GTVideoController.h"
 #import "RecommandViewController.h"
 #import "GTSplashView.h"
+#import "staticLib/GTStaticLibTest.h"
 @interface SceneDelegate ()<UITableViewDelegate>
 
 @end
@@ -42,6 +43,13 @@
     GTSplashView* splashView = [[GTSplashView alloc]initWithFrame:self.window.bounds];
     [self.window addSubview:splashView];
     
+    [GTStaticLibTest justTest];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(selectPosition:) name:@"selectPosition" object:nil];
+}
+
+-(void)selectPosition:(NSNotification*) notification {
+    NSString* code = [notification.userInfo objectForKey:@"code"];
+    NSLog(code);
 }
 
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
