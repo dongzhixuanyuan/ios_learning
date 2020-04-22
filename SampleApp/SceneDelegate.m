@@ -4,6 +4,7 @@
 #import "RecommandViewController.h"
 #import "GTSplashView.h"
 #import "staticLib/GTStaticLibTest.h"
+#import "GTLocationManager.h"
 @interface SceneDelegate ()<UITableViewDelegate>
 
 @end
@@ -45,6 +46,8 @@
     
     [GTStaticLibTest justTest];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(selectPosition:) name:@"selectPosition" object:nil];
+    [GTLocationManager getInstance];
+    
 }
 
 -(void)selectPosition:(NSNotification*) notification {

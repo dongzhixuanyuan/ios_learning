@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		164A1A3F4589F9DBFF239FD5 /* libPods-SampleApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A86171B13A2E299C341A1EB1 /* libPods-SampleApp.a */; };
 		A0081D5E243D62B00046FFEE /* GTPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A0081D5D243D62B00046FFEE /* GTPlayer.m */; };
 		A0081D61243D845F0046FFEE /* GTVideoToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = A0081D60243D845F0046FFEE /* GTVideoToolbar.m */; };
 		A0081D64243F68910046FFEE /* UIAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = A0081D63243F68910046FFEE /* UIAdapter.m */; };
@@ -17,8 +16,6 @@
 		A018482F2449A34C001DB3D5 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0AD3E0B244466BF00C0A202 /* CoreTelephony.framework */; };
 		A01848312449A34F001DB3D5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0AD3E012444653B00C0A202 /* Security.framework */; };
 		A01848332449A351001DB3D5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0AD3E05244465B100C0A202 /* SystemConfiguration.framework */; };
-		A01848352449A38C001DB3D5 /* GTFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0AD3DF324445B5A00C0A202 /* GTFramework.framework */; };
-		A01848362449A38C001DB3D5 /* GTFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A0AD3DF324445B5A00C0A202 /* GTFramework.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A026D39D242B3D0F005CE0E7 /* GTDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A026D39C242B3D0F005CE0E7 /* GTDetailViewController.m */; };
 		A04EED25241F1DEE00FAF693 /* GTVideoController.m in Sources */ = {isa = PBXBuildFile; fileRef = A04EED24241F1DEE00FAF693 /* GTVideoController.m */; };
 		A04EED28241FC75D00FAF693 /* RecommandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A04EED27241FC75D00FAF693 /* RecommandViewController.m */; };
@@ -40,6 +37,8 @@
 		A0AD3E0E244466D400C0A202 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A0AD3E0D244466D400C0A202 /* libz.tbd */; };
 		A0AD3E10244466DF00C0A202 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A0AD3E0F244466DF00C0A202 /* libc++.tbd */; };
 		A0D080C32431D8CB00BDBF9F /* GTListItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D080C22431D8CB00BDBF9F /* GTListItemModel.m */; };
+		A0F34278245019ED00D5DCBF /* GTLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F34277245019ED00D5DCBF /* GTLocationManager.m */; };
+		BDCC6150B1FED3C88EA3BBA4 /* libPods-SampleApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D7B1CCA44E61BAC48EA09B3 /* libPods-SampleApp.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,7 +65,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				A01848362449A38C001DB3D5 /* GTFramework.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -74,7 +72,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0A85F1CB334254703CE60914 /* Pods-SampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleApp.debug.xcconfig"; path = "Target Support Files/Pods-SampleApp/Pods-SampleApp.debug.xcconfig"; sourceTree = "<group>"; };
+		1D7B1CCA44E61BAC48EA09B3 /* libPods-SampleApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SampleApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BF1CCC5222A4B07EF033077 /* Pods-SampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleApp.release.xcconfig"; path = "Target Support Files/Pods-SampleApp/Pods-SampleApp.release.xcconfig"; sourceTree = "<group>"; };
 		A0081D5C243D62B00046FFEE /* GTPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTPlayer.h; sourceTree = "<group>"; };
 		A0081D5D243D62B00046FFEE /* GTPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTPlayer.m; sourceTree = "<group>"; };
 		A0081D5F243D845F0046FFEE /* GTVideoToolbar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTVideoToolbar.h; sourceTree = "<group>"; };
@@ -133,8 +132,9 @@
 		A0AD3E0F244466DF00C0A202 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		A0D080C12431D8CB00BDBF9F /* GTListItemModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTListItemModel.h; sourceTree = "<group>"; };
 		A0D080C22431D8CB00BDBF9F /* GTListItemModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTListItemModel.m; sourceTree = "<group>"; };
-		A86171B13A2E299C341A1EB1 /* libPods-SampleApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SampleApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B5E41D92B6D141120D285195 /* Pods-SampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleApp.release.xcconfig"; path = "Target Support Files/Pods-SampleApp/Pods-SampleApp.release.xcconfig"; sourceTree = "<group>"; };
+		A0F34276245019ED00D5DCBF /* GTLocationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTLocationManager.h; sourceTree = "<group>"; };
+		A0F34277245019ED00D5DCBF /* GTLocationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTLocationManager.m; sourceTree = "<group>"; };
+		E748AEF73AA39D26A4EB6BCE /* Pods-SampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleApp.debug.xcconfig"; path = "Target Support Files/Pods-SampleApp/Pods-SampleApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,16 +151,15 @@
 			files = (
 				A018482D2449A34B001DB3D5 /* CoreGraphics.framework in Frameworks */,
 				A0AD3E10244466DF00C0A202 /* libc++.tbd in Frameworks */,
-				A01848352449A38C001DB3D5 /* GTFramework.framework in Frameworks */,
 				A0AD3E0E244466D400C0A202 /* libz.tbd in Frameworks */,
 				A0AD3E0A244465CA00C0A202 /* libsqlite3.tbd in Frameworks */,
 				A018482F2449A34C001DB3D5 /* CoreTelephony.framework in Frameworks */,
 				A0AD3E042444654D00C0A202 /* libiconv.2.4.0.tbd in Frameworks */,
 				A0AD3DC5244441E300C0A202 /* libGTStaticLib.a in Frameworks */,
 				A0AD3DFF24445F8200C0A202 /* TencentOpenAPI.framework in Frameworks */,
-				164A1A3F4589F9DBFF239FD5 /* libPods-SampleApp.a in Frameworks */,
 				A01848312449A34F001DB3D5 /* Security.framework in Frameworks */,
 				A01848332449A351001DB3D5 /* SystemConfiguration.framework in Frameworks */,
+				BDCC6150B1FED3C88EA3BBA4 /* libPods-SampleApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +260,8 @@
 				A0081D63243F68910046FFEE /* UIAdapter.m */,
 				A0AD3D622441BEF000C0A202 /* GTSplashView.h */,
 				A0AD3D632441BEF000C0A202 /* GTSplashView.m */,
+				A0F34276245019ED00D5DCBF /* GTLocationManager.h */,
+				A0F34277245019ED00D5DCBF /* GTLocationManager.m */,
 			);
 			path = SampleApp;
 			sourceTree = "<group>";
@@ -362,7 +363,7 @@
 				A0AD3E05244465B100C0A202 /* SystemConfiguration.framework */,
 				A0AD3E032444654D00C0A202 /* libiconv.2.4.0.tbd */,
 				A0AD3E012444653B00C0A202 /* Security.framework */,
-				A86171B13A2E299C341A1EB1 /* libPods-SampleApp.a */,
+				1D7B1CCA44E61BAC48EA09B3 /* libPods-SampleApp.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -370,8 +371,8 @@
 		C3701A6AC2917D26F455CBE1 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				0A85F1CB334254703CE60914 /* Pods-SampleApp.debug.xcconfig */,
-				B5E41D92B6D141120D285195 /* Pods-SampleApp.release.xcconfig */,
+				E748AEF73AA39D26A4EB6BCE /* Pods-SampleApp.debug.xcconfig */,
+				3BF1CCC5222A4B07EF033077 /* Pods-SampleApp.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -400,7 +401,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A070E945241D15790080169A /* Build configuration list for PBXNativeTarget "SampleApp" */;
 			buildPhases = (
-				0CE7DEB47BC75513524062F6 /* [CP] Check Pods Manifest.lock */,
+				E7570550809604E87433FA7F /* [CP] Check Pods Manifest.lock */,
 				A070E912241D15770080169A /* Sources */,
 				A070E913241D15770080169A /* Frameworks */,
 				A070E914241D15770080169A /* Resources */,
@@ -530,7 +531,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0CE7DEB47BC75513524062F6 /* [CP] Check Pods Manifest.lock */ = {
+		E7570550809604E87433FA7F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -577,6 +578,7 @@
 				A0526F292439CF86000E6800 /* GTVideoViewCollectionViewCell.m in Sources */,
 				A0081D64243F68910046FFEE /* UIAdapter.m in Sources */,
 				A00CF00F24304D510053E4DE /* GTListLoader.m in Sources */,
+				A0F34278245019ED00D5DCBF /* GTLocationManager.m in Sources */,
 				A0AD3D642441BEF000C0A202 /* GTSplashView.m in Sources */,
 				A0081D5E243D62B00046FFEE /* GTPlayer.m in Sources */,
 				A070E91E241D15770080169A /* SceneDelegate.m in Sources */,
@@ -764,11 +766,12 @@
 		};
 		A070E946241D15790080169A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0A85F1CB334254703CE60914 /* Pods-SampleApp.debug.xcconfig */;
+			baseConfigurationReference = E748AEF73AA39D26A4EB6BCE /* Pods-SampleApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 25372VQL85;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SampleApp/framework",
@@ -791,11 +794,12 @@
 		};
 		A070E947241D15790080169A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B5E41D92B6D141120D285195 /* Pods-SampleApp.release.xcconfig */;
+			baseConfigurationReference = 3BF1CCC5222A4B07EF033077 /* Pods-SampleApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 25372VQL85;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SampleApp/framework",

@@ -49,11 +49,13 @@
     _loader = [[GTListLoader alloc]init];
     __weak typeof (self) wself = self;
     [_loader loadListData:^(BOOL success, NSArray<GTListItemModel *> *array) {
-        __strong typeof(wself) sself = wself;
-        NSLog(@"");
-        NSArray *readItems = [[NSUserDefaults standardUserDefaults] arrayForKey:KEY_FOR_READ_ITEMS];
-        sself.data = array;
-        [sself.tableView reloadData];
+        if (success) {
+            __strong typeof(wself) sself = wself;
+            NSLog(@"");
+            NSArray *readItems = [[NSUserDefaults standardUserDefaults] arrayForKey:KEY_FOR_READ_ITEMS];
+            sself.data = array;
+            [sself.tableView reloadData];
+        }
     } ];
 }
 

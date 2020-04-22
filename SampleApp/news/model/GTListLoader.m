@@ -33,19 +33,24 @@
         NSLog(@"");
         NSError *jsonError;
         id jsonObj =  [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
-        NSArray* dataArray = (NSArray*)[[jsonObj objectForKey:@"result"]objectForKey:@"data"];
-        NSMutableArray* modelArray = @[].mutableCopy;
-        for (NSDictionary* info in dataArray) {
-            GTListItemModel* item = [GTListItemModel alloc];
-            [item initFromDictionary:info];
-            [modelArray addObject:item];
+        if ([[jsonObj objectForKey:@"error_code"] intValue] != 200) {
+            block(false,nil);
+        }else {
+            NSArray* dataArray = (NSArray*)[[jsonObj objectForKey:@"result"]objectForKey:@"data"];
+                   NSMutableArray* modelArray = @[].mutableCopy;
+                   for (NSDictionary* info in dataArray) {
+                       GTListItemModel* item = [GTListItemModel alloc];
+                       [item initFromDictionary:info];
+                       [modelArray addObject:item];
+                   }
+                   dispatch_sync(dispatch_get_main_queue(), ^{
+                       block(error == nil,modelArray.copy);
+                   });
+                   __strong typeof (self) strongSelf = weakSelf;
+                   
+                   [strongSelf saveToStorage:modelArray];
         }
-        dispatch_sync(dispatch_get_main_queue(), ^{
-            block(error == nil,modelArray.copy);
-        });
-        __strong typeof (self) strongSelf = weakSelf;
-        
-        [strongSelf saveToStorage:modelArray];
+       
         
         NSLog(@"");
     }];
