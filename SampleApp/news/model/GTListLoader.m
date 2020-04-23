@@ -33,7 +33,7 @@
         NSLog(@"");
         NSError *jsonError;
         id jsonObj =  [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
-        if ([[jsonObj objectForKey:@"error_code"] intValue] != 200) {
+        if ([[jsonObj objectForKey:@"error_code"] intValue] != 0) {
             block(false,nil);
         }else {
             NSArray* dataArray = (NSArray*)[[jsonObj objectForKey:@"result"]objectForKey:@"data"];
@@ -50,15 +50,10 @@
                    
                    [strongSelf saveToStorage:modelArray];
         }
-       
-        
         NSLog(@"");
     }];
-
     [task resume];
-    
 }
-
 
 -(void)saveToStorage: (NSArray<GTListItemModel*>*) array {
     NSArray<NSString*>*   paths =  NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);

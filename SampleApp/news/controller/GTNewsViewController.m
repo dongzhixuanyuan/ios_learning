@@ -13,6 +13,7 @@
 #import "GTListLoader.h"
 #import "GTListItemModel.h"
 #import "GTMediator.h"
+#import "UIAdapter.h"
 
 @interface GTNewsViewController ()<UITableViewDataSource, UITableViewDelegate, NewsTableViewCellDelegate>
 @property (strong, nonatomic, readwrite) UITableView *tableView;
@@ -41,11 +42,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    _tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    UITextField* searchView = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, 200, 200)];
+    [self.view  addSubview:searchView];
+    searchView.backgroundColor = [UIColor blueColor];
+    [searchView.leadingAnchor constraintEqualToAnchor:self.view.layoutMarginsGuide.leadingAnchor constant:UIAdapter(20)].active = YES;
+    [searchView.trailingAnchor constraintEqualToAnchor:self.view.layoutMarginsGuide.trailingAnchor constant:UIAdapter(20)].active = YES;
+    [searchView.heightAnchor constraintEqualToConstant:50].active = YES;
+
+    _tableView = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
     _tableView.dataSource = self;
     _tableView.delegate = self;
     _data = @[].mutableCopy;
-    [self.view addSubview:_tableView];
+//    [self.view addSubview:_tableView];
+//
+//    [_tableView.topAnchor constraintEqualToAnchor:searchView.bottomAnchor].active = YES;
+//    [_tableView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor].active = YES;
+//    [_tableView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor].active = YES;
+//    [_tableView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor].active = true;
+    
+    
     _loader = [[GTListLoader alloc]init];
     __weak typeof (self) wself = self;
     [_loader loadListData:^(BOOL success, NSArray<GTListItemModel *> *array) {

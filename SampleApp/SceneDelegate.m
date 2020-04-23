@@ -47,6 +47,9 @@
     [GTStaticLibTest justTest];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(selectPosition:) name:@"selectPosition" object:nil];
     [GTLocationManager getInstance];
+    NSUserDefaults* userDefault = [[NSUserDefaults alloc]initWithSuiteName:@"com.liudong"];
+    [userDefault setInteger:200 forKey:@"extensionTest"];
+    [userDefault synchronize];
     
 }
 
