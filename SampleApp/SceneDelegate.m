@@ -41,8 +41,8 @@
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
     
-    GTSplashView* splashView = [[GTSplashView alloc]initWithFrame:self.window.bounds];
-    [self.window addSubview:splashView];
+//    GTSplashView* splashView = [[GTSplashView alloc]initWithFrame:self.window.bounds];
+//    [self.window addSubview:splashView];
     
     [GTStaticLibTest justTest];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(selectPosition:) name:@"selectPosition" object:nil];

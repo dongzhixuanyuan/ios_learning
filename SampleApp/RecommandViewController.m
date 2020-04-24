@@ -44,11 +44,13 @@
             subview;
         })];
 
-        UIView *secondView = [[UIView alloc]initWithFrame:CGRectMake(200, 300, 100, 100)];
+        UIView *secondView = [[UIView alloc]initWithFrame:CGRectZero
+                              ];
+        secondView.translatesAutoresizingMaskIntoConstraints = false;
         [pageView addSubview:secondView];
         secondView.backgroundColor = [UIColor blackColor];
-        [secondView.leadingAnchor constraintEqualToAnchor:pageView.leadingAnchor constant:100].active = true;
-        [secondView.topAnchor constraintEqualToAnchor:pageView.topAnchor constant:100].active = true;
+        [secondView.leadingAnchor constraintEqualToAnchor:pageView.leadingAnchor constant:200].active = true;
+        [secondView.topAnchor constraintEqualToAnchor:pageView.topAnchor constant:200].active = true;
         [secondView.widthAnchor constraintEqualToConstant:100].active = true;
         [secondView.heightAnchor constraintEqualToConstant:100].active = true;
         [secondView setUserInteractionEnabled:true];

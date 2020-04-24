@@ -17,6 +17,7 @@
 
 @interface GTNewsViewController ()<UITableViewDataSource, UITableViewDelegate, NewsTableViewCellDelegate>
 @property (strong, nonatomic, readwrite) UITableView *tableView;
+@property (strong, nonatomic, readwrite) UITextField *searchView;
 @property (strong, nonatomic, readwrite) NSArray<GTListItemModel *> *data;
 @property (strong, nonatomic, readwrite) GTListLoader *loader;
 @end
@@ -29,6 +30,8 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    CGFloat navigationHeight =    self.navigationController.navigationBar.frame.size.height;
+    NSLog(@"navigationHeight,%f", navigationHeight);
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -41,26 +44,32 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
-    UITextField* searchView = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, 200, 200)];
-    [self.view  addSubview:searchView];
-    searchView.backgroundColor = [UIColor blueColor];
-    [searchView.leadingAnchor constraintEqualToAnchor:self.view.layoutMarginsGuide.leadingAnchor constant:UIAdapter(20)].active = YES;
-    [searchView.trailingAnchor constraintEqualToAnchor:self.view.layoutMarginsGuide.trailingAnchor constant:UIAdapter(20)].active = YES;
-    [searchView.heightAnchor constraintEqualToConstant:50].active = YES;
+    CGFloat navigationHeight =    self.navigationController.navigationBar.frame.size.height;
+    NSLog(@"navigationHeight,%f", navigationHeight);
 
-    _tableView = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
+    self.view.backgroundColor = [UIColor whiteColor];
+    _searchView = [[UITextField alloc] init];
+    [self.view addSubview:_searchView];
+    _searchView.translatesAutoresizingMaskIntoConstraints =     NO;
+    _searchView.backgroundColor = [UIColor redColor];
+    [_searchView.topAnchor constraintEqualToAnchor:self.view.layoutMarginsGuide.topAnchor constant:88].active = YES;
+    [_searchView.leadingAnchor constraintEqualToAnchor:self.view.layoutMarginsGuide.leadingAnchor constant:UIAdapter(20)].active = YES;
+    [_searchView.trailingAnchor constraintEqualToAnchor:self.view.layoutMarginsGuide.trailingAnchor constant:UIAdapter(-20)].active = YES;
+    [_searchView.heightAnchor constraintEqualToConstant:50].active = YES;
+
+    _tableView = [[UITableView alloc]init];
     _tableView.dataSource = self;
     _tableView.delegate = self;
+
     _data = @[].mutableCopy;
-//    [self.view addSubview:_tableView];
-//
-//    [_tableView.topAnchor constraintEqualToAnchor:searchView.bottomAnchor].active = YES;
-//    [_tableView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor].active = YES;
-//    [_tableView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor].active = YES;
-//    [_tableView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor].active = true;
-    
-    
+    [self.view addSubview:_tableView];
+    _tableView.translatesAutoresizingMaskIntoConstraints = false;
+    [_tableView.topAnchor constraintEqualToAnchor:self.view.topAnchor constant:120].active = YES;
+    [_tableView.topAnchor constraintEqualToAnchor:self.view.topAnchor].active = YES;
+    [_tableView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor].active = YES;
+    [_tableView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor].active = YES;
+    [_tableView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor].active = true;
+
     _loader = [[GTListLoader alloc]init];
     __weak typeof (self) wself = self;
     [_loader loadListData:^(BOOL success, NSArray<GTListItemModel *> *array) {
@@ -112,8 +121,7 @@
 //    [GTMediator openDetailUrlWithSchema:@"detail" params:dictionary];
 
     Class class = [GTMediator classForProtocol:@protocol(GTDetailViewProtocol)];
-    UIViewController* protocolViewController = [[class alloc] initWithUrl:[NSURL URLWithString:[_data objectAtIndex:indexPath.item].url]];
-    
+    UIViewController *protocolViewController = [[class alloc] initWithUrl:[NSURL URLWithString:[_data objectAtIndex:indexPath.item].url]];
 
 //    __kindof UIViewController *controller =  [GTMediator openDetailUrl:[_data objectAtIndex:indexPath.item].url];
 
